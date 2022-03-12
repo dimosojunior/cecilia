@@ -1,0 +1,207 @@
+{% extends 'DimosoApp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}View report {% endblock %}</</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+     <style type="text/css">
+     
+    </style>
+</head>
+<body>
+  
+   
+
+
+  <style>
+    .small-img{
+      width: 70px;
+      height: 70px;
+    }
+  </style>
+  <main class="mt-5 pt-4">
+    <div class="container">
+      {% if messages %}
+    {% for message in messages %}
+      <div style="margin-top:5rem;" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+
+
+
+
+
+      <section class="mb-4">
+        
+  
+        <h1 style="color: red">FINAL EXAMS REPORT</h1>
+<div class="row">
+
+  <div class="col-md-4">
+    {{object.name}}
+  </div>
+
+  <div class="col-md-4">
+    {{object.year}}
+  </div>
+  
+</div>
+
+        <div class="table-responsive text-nowrap" style="">
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Subjects</th>
+                <th scope="col">Total Marks</th>
+                <th scope="col">Marks Obtained</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if object.sub1_marks %}
+                <tr>
+                
+                <td>{{object.sub1}}</td>
+                <td>{{object.sub1_marks}}</td>
+                <td>{{object.sub1_obtained}}</td>
+                <td>{{object.sub1_grade}}</td>
+                <td>{{object.sub1_remaks}}</td>
+              </tr>
+              
+              {% else %}
+             <h2> {{object.sub1}} results not yet uploaded </h2>
+             {% endif %}
+
+             {% if object.sub2_marks %}
+                <tr>
+                
+                <td>{{object.sub2}}</td>
+                <td>{{object.sub2_marks}}</td>
+                <td>{{object.sub2_obtained}}</td>
+                <td>{{object.sub2_grade}}</td>
+                <td>{{object.sub2_remaks}}</td>
+              </tr>
+              
+              {% else %}
+             <h2> {{object.sub2}} results not yet uploaded </h2>
+             {% endif %}
+
+
+              {% if object.sub3_marks %}
+                <tr>
+                
+                <td>{{object.sub3}}</td>
+                <td>{{object.sub3_marks}}</td>
+                <td>{{object.sub3_obtained}}</td>
+                <td>{{object.sub3_grade}}</td>
+                <td>{{object.sub3_remaks}}</td>
+              </tr>
+              
+              {% else %}
+             <h2> {{object.sub3}} results not yet uploaded </h2>
+             {% endif %}
+
+
+              {% if object.sub4_marks %}
+                <tr>
+                
+                <td>{{object.sub4}}</td>
+                <td>{{object.sub4_marks}}</td>
+                <td>{{object.sub4_obtained}}</td>
+                <td>{{object.sub4_grade}}</td>
+                <td>{{object.sub4_remaks}}</td>
+              </tr>
+              
+              {% else %}
+             <h4> {{object.sub4}} results not yet uploaded </h2>
+             {% endif %}
+
+
+              {% if object.sub5_marks %}
+                <tr>
+                
+                <td>{{object.sub5}}</td>
+                <td>{{object.sub5_marks}}</td>
+                <td>{{object.sub5_obtained}}</td>
+                <td>{{object.sub5_grade}}</td>
+                <td>{{object.sub5_remaks}}</td>
+              </tr>
+              
+              {% else %}
+             <h2> {{object.sub5}} results not yet uploaded </h2>
+             {% endif %}
+
+
+            
+
+
+
+
+            </tbody>
+          </table>
+          
+         
+        </div>
+
+<div class="row">
+  
+<div class="col-md-3">
+  Percentage: <u>{{object.percentage}}</u><br>
+  Overall Grade: <u>{{object.Overall_grade}}</u><br>
+
+  Rank: <u>{{object.rank}}</u><br>
+
+  Result: <u>{{object.result}}</u><br>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+      </section>
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+<!--jquery code for autocomplete javascriptcode---->
+<script src="{% static 'DimosoApp/assets/jqueryui/external/jquery/jquery.js' %}" type="text/javascript"></script>
+<script src="{% static 'DimosoApp/assets/jqueryui/jquery-ui.js' %}" type="text/javascript"></script>
+
+
+
+
+
+
+</body>
+</html>
+{% endblock %}

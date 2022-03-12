@@ -1,0 +1,406 @@
+{% extends 'DimosoApp/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Add student Report {% endblock %}</title>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+      body{
+
+  overflow-x: hidden;
+  background-color: wheat;
+}
+
+
+input{
+  
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid blue;
+}
+.inputi{
+  margin-top: 1cm;
+  width: 90%;
+}
+#name{
+  margin-top: 1cm;
+  width: 90%;
+}
+label{
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+input[type=submit]{
+  width: 6cm;
+  padding: 10px;
+  margin-top: : 1cm;
+  border-radius: 10px;
+  
+}
+  .batani{
+        background-color: blue;
+        width: 4cm;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="container-fluid" style="margin-top: 1cm;">
+   {% if messages %}
+    {% for message in messages %}
+     
+
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    {% endfor %}
+  {% endif %}
+
+
+<a href="{% url 'home' %}"class="btn btn-primary btn-md my-0 p" type="submit" style="margin-top: 1cm;margin-bottom: 1cm;width: 4cm;">  Back 
+
+                        </a>
+
+
+
+
+
+<center>
+
+
+
+      
+    <form action="" method="post" enctype="multipart/form-data" style="width: 100%;">
+      {% csrf_token %}
+     
+      
+    <div class="row">
+
+      <div class="col-md-4" >
+        {{form.name.label}} <br>
+        {{form.name}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.email.label}} <br>
+        {{form.email}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.title.label}} <br>
+        {{form.title}}
+        
+      </div>
+    </div>
+
+<hr>
+
+      <div class="row">
+
+      <div class="col-md-2" >
+        {{form.sub1.label}} <br>
+        {{form.sub1}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub1_marks.label}} <br>
+        {{form.sub1_marks}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub1_obtained.label}} <br>
+        {{form.sub1_obtained}}
+        
+      </div>
+
+
+      <div class="col-md-2" >
+        {{form.sub1_grade.label}} <br>
+        {{form.sub1_grade}}
+        
+      </div>
+
+
+      <div class="col-md-4" >
+        {{form.sub1_remaks.label}} <br>
+        {{form.sub1_remaks}}
+        
+      </div>
+
+
+    </div>
+
+
+
+      <div class="row">
+
+      <div class="col-md-2" >
+        {{form.sub2.label}} <br>
+        {{form.sub2}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub2_marks.label}} <br>
+        {{form.sub2_marks}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub2_obtained.label}} <br>
+        {{form.sub2_obtained}}
+        
+      </div>
+
+          <div class="col-md-2" >
+        {{form.sub2_grade.label}} <br>
+        {{form.sub2_grade}}
+        
+      </div>
+
+
+      <div class="col-md-4" >
+        {{form.sub2_remaks.label}} <br>
+        {{form.sub2_remaks}}
+        
+      </div>
+    </div>
+
+
+
+
+      <div class="row">
+
+      <div class="col-md-2" >
+        {{form.sub3.label}} <br>
+        {{form.sub3}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub3_marks.label}} <br>
+        {{form.sub3_marks}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub3_obtained.label}} <br>
+        {{form.sub3_obtained}}
+        
+      </div>
+          <div class="col-md-2" >
+        {{form.sub3_grade.label}} <br>
+        {{form.sub3_grade}}
+        
+      </div>
+
+
+      <div class="col-md-4" >
+        {{form.sub3_remaks.label}} <br>
+        {{form.sub3_remaks}}
+        
+      </div>
+    </div>
+
+
+
+
+
+      <div class="row">
+
+      <div class="col-md-2" >
+        {{form.sub4.label}} <br>
+        {{form.sub4}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub4_marks.label}} <br>
+        {{form.sub4_marks}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub4_obtained.label}} <br>
+        {{form.sub4_obtained}}
+        
+      </div>
+          <div class="col-md-2" >
+        {{form.sub4_grade.label}} <br>
+        {{form.sub4_grade}}
+        
+      </div>
+
+
+      <div class="col-md-4" >
+        {{form.sub4_remaks.label}} <br>
+        {{form.sub4_remaks}}
+        
+      </div>
+    </div>
+
+
+
+
+
+      <div class="row">
+
+      <div class="col-md-2" >
+        {{form.sub5.label}} <br>
+        {{form.sub5}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub5_marks.label}} <br>
+        {{form.sub5_marks}}
+        
+      </div>
+
+      <div class="col-md-2" >
+        {{form.sub5_obtained.label}} <br>
+        {{form.sub5_obtained}}
+        
+      </div>
+          <div class="col-md-2" >
+        {{form.sub5_grade.label}} <br>
+        {{form.sub5_grade}}
+        
+      </div>
+
+
+      <div class="col-md-4" >
+        {{form.sub5_remaks.label}} <br>
+        {{form.sub5_remaks}}
+        
+      </div>
+    </div>
+
+    <hr>
+
+
+       <div class="row">
+
+           <div class="col-md-4" >
+        <h1>Total:</h1>
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.total_marks.label}} <br>
+        {{form.total_marks}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.total_obtained.label}} <br>
+        {{form.total_obtained}}
+        
+      </div>
+
+      
+    </div>
+
+
+
+
+      <div class="row">
+
+      <div class="col-md-4" >
+        {{form.percentage.label}} <br>
+        {{form.percentage}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.Overall_grade.label}} <br>
+        {{form.Overall_grade}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.rank.label}} <br>
+        {{form.rank}}
+        
+      </div>
+    </div>
+
+
+      <div class="row">
+
+      <div class="col-md-4" >
+        {{form.result.label}} <br>
+        {{form.result}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.stu_pos.label}} <br>
+        {{form.stu_pos}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.all_stu.label}} <br>
+        {{form.all_stu}}
+        
+      </div>
+    </div>
+
+
+  <div class="row">
+
+      <div class="col-md-4" >
+        {{form.teacher_sign.label}} <br>
+        {{form.teacher_sign}}
+        
+      </div>
+
+      <div class="col-md-4" >
+        {{form.year.label}} <br>
+        {{form.year}}
+        
+      </div>
+
+    </div>
+
+
+      
+<center>
+ <button type="submit" class="batani">
+     Submit
+
+
+  </button>
+  </center>
+
+  </form>
+  
+    
+  </center>
+
+</div>
+</body>
+</html>
+{% endblock %}
